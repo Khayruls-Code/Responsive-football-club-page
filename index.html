@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <script src="https://kit.fontawesome.com/efdb8104ef.js" crossorigin="anonymous"></script>
     <title>Responsive Football Clab Page</title>
 </head>
@@ -12,8 +13,11 @@
     <header>
         <div class="navbar">
             <div class="container flex-container">
+                <div class="hamburger">
+                    <div class="bar"></div>
+                </div>
                 <div class="logo">
-                    <img src="images/logo.png" alt="">
+                    <a href="#hero"><img src="images/logo.png" alt=""></a>
                 </div>
                 <ul>
                     <li><a href="#hero">Home</a></li>
@@ -23,7 +27,7 @@
                     <li><a href="#footer">Contact</a></li>
                 </ul>
                 <div class="login">
-                    <a href="#"><i class="fas fa-sign-in-alt"></i>Login</a>
+                    <a target="_blank" href="https://www.facebook.com/khayrulislam.66/"><i class="fas fa-sign-in-alt"></i>Login</a>
                 </div>
             </div>
         </div>
@@ -33,7 +37,7 @@
                     <h1>Upcomming <br> Qatar World Cup <span>2022</span></h1>
                     <p>The admission comes after an investigative report by German</p>
                     <div class="common-btn">
-                        <a href="#">Watch Live<i class="fas fa-arrow-right"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/JhankarMahbub/videos/217057110275558">Watch Live<i class="fas fa-arrow-right"></i></a>
                     </div>
                     <p></p>
                 </div>
@@ -167,7 +171,7 @@
                     <h1>All Highlights <br> Copa America 2021</h1>
                     <p>Since 1993, the tournament has generally featured 12 teams—all 10 CONMEBOL teams and two additional teams from other confederations Mexico participated in every tournament between 1993 and 2016,</p>
                     <div class="common-btn">
-                        <a href="#">Watch Live<i class="fas fa-arrow-right"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/JhankarMahbub/videos/217057110275558">Watch Live<i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-2">
@@ -416,16 +420,34 @@
         <div class="container">
             <img src="images/Logo2.png" alt="">
             <div class="social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="https://www.facebook.com/khayrulislam.66/"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"></a><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-google-plus-g"></i></a>
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p>Copyright &copy; 2021 by colourless Khayrul</p>
+            <p>Copyright &copy; 2021 by Colourless Khayrul</p>
         </div>
     </footer>
     <!-- ------footer------- -->
 
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.navbar ul')
+        hamburger.addEventListener('click', ()=>{
+            menu.classList.toggle('showMenu')
+            hamburger.classList.toggle('close')
+        })
+        const navbar = document.querySelector('header .navbar');
+        document.addEventListener('scroll', ()=>{
+            var navbar_under = window.scrollY
+            if(navbar_under > 250){
+                navbar.classList.add('showBg')
+            }else 
+            {
+                navbar.classList.remove('showBg')
+            }
+        })
+    </script>
 </body>
 </html>

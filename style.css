@@ -49,10 +49,66 @@ header{
     width: 100%;
     height: 90px;
     padding: 10px 0;
-    position: static;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
+    transition: 0.5s ease;
+    transition-property: background , height;
+}
+.navbar.showBg{
+    background: rgba(0,0,0,0.8);
+    height: 70px;
+}
+.navbar.showBg .logo img{
+    width: 80px;
+}
+.hamburger{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.hamburger .bar{
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+}
+.hamburger .bar::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    content: '';
+    top: -6px;
+    left: 0;
+    transition: 0.5s transform;
+}
+.hamburger.close .bar{
+    background: transparent;
+}
+.hamburger.close .bar::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+.hamburger.close .bar::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+.hamburger .bar::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    content: '';
+    top: 6px;
+    left: 0;
+    cursor: pointer;
+    transition: 0.5s transform;
 }
 .flex-container{
     display: flex;
@@ -66,6 +122,7 @@ header{
 }
 .navbar .logo img{
     width: 100px;
+    transition: 0.5s ease width;
 }
 .navbar .logo h1{
     color: #fff;
@@ -176,7 +233,7 @@ main{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 30px;
-}
+}   
 .player{
     padding: 15px;
     box-shadow: 0px 0px 10px 1px rgba(153, 153, 153, 0.349);
@@ -409,6 +466,7 @@ hr{
     border-radius: 50%;
     color: #fff;
     font-size: 1.4rem;
+    cursor: pointer;
 }
 .col-3 .tweetBody  p{
     font-size: 1.4rem;
